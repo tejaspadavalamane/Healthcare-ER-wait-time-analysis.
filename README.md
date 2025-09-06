@@ -1,0 +1,1 @@
+short description: Designed a healthcare analytics solution to monitor and reduce ER wait times. Combined data cleaning, SQL-based analysis, predictive modeling in Python, and a Power BI dashboard to deliver actionable insights for improving patient flow and hospital efficiency.
