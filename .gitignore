@@ -8,8 +8,12 @@ __pycache__/
 # Virtual environment
 .venv/
 
-# Jupyter notebooks checkpoints
+# Jupyter checkpoints
 .ipynb_checkpoints/
 
 # VS Code settings
 .vscode/
+
+# Remote rules
+*.log
+.DS_Store
