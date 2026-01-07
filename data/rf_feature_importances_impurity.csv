@@ -1,0 +1,42 @@
+feature,importance
+patient_satisfaction,0.8404790644155844
+nurse_to_patient_ratio,0.0291756961743582
+patient_outcome_Admitted,0.02308078194155376
+time_of_day_Evening,0.015737666070976035
+season_Winter,0.014542723153260557
+facility_size_beds,0.012959917972018186
+is_weekend,0.009110077324959963
+specialist_availability,0.00906248868845065
+day_of_week_Monday,0.006414615568622853
+visit_dayname_Monday,0.005634838886417195
+season_Summer,0.005418927818332367
+time_of_day_Afternoon,0.003991107879814537
+hosp_visit_count,0.003152628188231537
+season_Fall,0.002693333790219728
+day_of_week_Friday,0.0019018092355886785
+season_Spring,0.0016477631133342647
+visit_dayname_Friday,0.0015506235187022813
+hospital_id_HOSP-5,0.001217043925237561
+hospital_id_HOSP-4,0.001111248831333373
+time_of_day_Night,0.001052783566333203
+patient_outcome_Discharged,0.0009507692059171544
+time_of_day_Early Morning,0.0009318382404803834
+patient_outcome_Left Without Being Seen,0.0008979256648412199
+day_of_week_Tuesday,0.0008834146809034743
+hospital_id_HOSP-1,0.000880791735467766
+visit_dayname_Tuesday,0.0007620680338756873
+time_of_day_Late Morning,0.0007130484902647432
+hospital_id_HOSP-3,0.0006814091434873016
+hospital_id_HOSP-2,0.00046190567362917775
+visit_dayname_Sunday,0.00040814134811525894
+day_of_week_Sunday,0.0004038087781178848
+visit_dayname_Wednesday,0.00040379920224616105
+visit_dayname_Thursday,0.0003985933091084807
+day_of_week_Wednesday,0.00037006652472568
+day_of_week_Thursday,0.0003510847155127002
+region_Rural,0.00015351987247217008
+region_Urban,0.00014622429435551024
+visit_dayname_Saturday,0.00013377103455262381
+day_of_week_Saturday,0.00013267998859731742
+prior_visits,0.0
+urgency_level,0.0
