@@ -140,7 +140,9 @@ Healthcare-ER_wait-time-analysis/
 
 ```
 
+## Author
+
+**Tejas Padavalamane**
 
 
 
----
