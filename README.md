@@ -1,139 +1,146 @@
-# Emergency Room Wait Time Prediction & Analysis
+# Emergency Room Wait Time Analysis with Power BI & Machine Learning
 
-## Project Overview
-Emergency department wait times directly impact patient outcomes, satisfaction, and hospital efficiency.  
-This project builds an end-to-end analytics solution to **predict ER wait times**, **explain what drives delays**, and **surface operational insights** through an interactive Power BI dashboard.
+![Main Dashboard Overview](/screenshots/Main_Dashboard.png)
 
-The focus is not just on building a model, but on turning predictions into **actionable, decision-ready insights** for hospital operations teams.
+## Introduction
 
----
-## Objectives
-- Predict patient wait times using historical ER visit data
-- Identify key drivers of long wait times using model interpretability techniques
-- Evaluate model performance across hospitals and time-of-day
-- Build a professional Power BI report with drillthrough analysis
-- Present insights in a way that supports real operational decisions
+Emergency department wait times are a critical operational challenge. Long waits affect patient outcomes, satisfaction, and hospital efficiency, yet the drivers behind delays are often difficult to pinpoint.
+
+This project was built to answer a practical question:
+
+**Where, when, and why do ER wait times break down — and what can hospitals do about it?**
+
+Using historical ER visit data, I developed a complete analytics solution that combines **machine learning predictions**, **model interpretability**, and a **Power BI dashboard** designed for operational decision-making.
 
 ---
 
-## Tools & Technologies
-- **Python**: pandas, numpy, scikit-learn, matplotlib
-- **Machine Learning**: Random Forest Regression
-- **Model Interpretability**: Feature importance (impurity-based), permutation importance
-- **Visualization & BI**: Power BI, DAX
-- **Version Control**: Git, GitHub
+## Skills Showcased
+
+This project demonstrates end-to-end analytical thinking, from modeling to business storytelling:
+
+- **⚙️ Data Preparation & Feature Engineering (Python)**
+  - Cleaned visit-level data and engineered time-based and operational features
+  - Structured outputs for downstream BI consumption
+
+- **🤖 Predictive Modeling**
+  - Built a Random Forest regression model to predict ER wait times
+  - Evaluated performance using MAE and RMSE
+
+- **🔍 Model Interpretability**
+  - Impurity-based feature importance to understand internal model behavior
+  - Permutation importance to validate real-world feature impact
+  - Cross-comparison to confirm which drivers truly matter
+
+- **📊 Power BI & DAX**
+  - Created reusable DAX measures for MAE, RMSE, averages, and counts
+  - Designed KPI-driven layouts with consistent metric definitions
+  - Implemented drillthrough pages for hospital- and hour-level analysis
+
+- **🖱️ Interactive Reporting**
+  - Drillthrough navigation for deep-dive analysis
+  - Context-aware visuals that respond to user selections
+  - Conditional formatting to highlight risk and bias patterns
+
+- **🎨 Dashboard Design**
+  - Clean, executive-ready layout
+  - Visual hierarchy focused on decision-making
+  - Residual analysis to assess prediction quality and bias
 
 ---
 
-## Data & Modeling Approach
-- Cleaned and prepared ER visit-level data
-- Engineered features related to:
-  - Hospital characteristics
-  - Time of visit (hour, day patterns)
-  - Staffing and patient flow indicators
-- Trained a Random Forest regression model
-- Evaluated performance using MAE and RMSE
-- Generated:
-  - Row-level predictions with residuals
-  - Aggregated summaries by hospital and hour
-  - Feature importance outputs for interpretation
+## Dashboard Overview
 
----
+### Page 1: Executive Overview
 
-## Model Interpretability
-Two complementary approaches were used:
+![Executive Overview](/screenshots/Main_Dashboard.png)
 
-- **Impurity-based Feature Importance**  
-  Shows what the model relies on internally
+This page provides a high-level view of model performance and operational risk.
 
-- **Permutation Importance**  
-  Measures how much model performance drops when a feature is shuffled
-
-Agreement between both methods increases confidence in which factors truly matter.
-
----
-
-## Power BI Dashboard
-
-### Page 1 — Executive Overview
-Designed for leadership-level monitoring.
-
-Includes:
-- KPI cards: Overall MAE, RMSE, Average Actual Wait, Average Predicted Wait
+Key elements include:
+- KPI cards showing overall MAE, RMSE, average actual wait, and average predicted wait
 - Prediction error by hospital (drillthrough enabled)
-- Prediction error by hour of day (drillthrough enabled)
-- Residual distribution to assess bias and outliers
-- Feature importance visuals for transparency
+- Prediction error across the day to highlight peak-risk hours
+- Residual distribution to assess bias and extreme misses
+- Feature importance visuals to explain *why* the model behaves the way it does
 
-Purpose:
-Quickly identify where prediction errors are highest and which factors drive wait times.
-
----
-
-### Page 2 — Hospital Detail (Drillthrough)
-Activated by right-clicking a hospital on the main page.
-
-Includes:
-- Hospital-specific KPIs (MAE, average waits, visit count)
-- Hourly MAE trend for the selected hospital
-- Actual vs predicted wait comparison by hour
-- Residual distribution for hospital-level bias analysis
-
-Purpose:
-Understand how performance varies within a specific hospital and when delays are most severe.
+This page answers:
+**Which hospitals and times need attention first?**
 
 ---
 
-### Page 3 — Hour Detail (Drillthrough)
-Activated by right-clicking an hour on the main page.
+### Page 2: Hospital Detail (Drillthrough)
 
-Includes:
-- KPIs for the selected hour (MAE, RMSE, visit volume)
-- Hospital performance comparison during that hour
-- Detailed visit-level table
-- Residual distribution for time-based error patterns
+![Hospital Drillthrough](/screenshots/Hospital_Drillthrough.png)
 
-Purpose:
-Identify peak-risk hours and operational pressure points.
+This page is accessed by right-clicking a hospital on the main dashboard.
+
+It provides:
+- Hospital-specific KPIs (MAE, average waits, visit volume)
+- Hourly MAE trend to identify problem periods
+- Actual vs predicted wait time comparison by hour
+- Residual distribution to detect systematic over- or under-prediction
+
+This page answers:
+**What’s happening inside a specific hospital, and when does it struggle most?**
+
+---
+
+### Page 3: Hour Detail (Drillthrough)
+
+![Hour Drillthrough](/screenshots/Hour_Drillthrough.png)
+
+This page is accessed by right-clicking an hour on the main dashboard.
+
+It provides:
+- Hour-level KPIs (MAE, RMSE, visit count)
+- Hospital performance comparison during the selected hour
+- Visit-level table for detailed inspection
+- Residual distribution with conditional formatting to flag bias direction
+
+This page answers:
+**Which hours are operational pressure points, and which hospitals are most affected?**
 
 ---
 
 ## Key Insights
-- Certain hospitals consistently show higher prediction errors, indicating operational variability
-- Error spikes during specific evening hours suggest staffing or demand imbalance
-- Staffing-related and time-based features consistently rank among the most important drivers
-- Residual analysis shows most predictions cluster near zero, with a small number of extreme cases
+
+- A small number of hospitals consistently contribute disproportionate prediction error
+- Evening hours show higher variability, suggesting staffing or demand imbalance
+- Time-based and staffing-related features dominate importance rankings
+- Most predictions cluster near zero residuals, with a limited number of extreme cases
+
+These insights translate directly into **staffing, scheduling, and triage discussions**.
 
 ---
 
 ## Repository Structure
 
+```
+
 Healthcare-ER_wait-time-analysis/
-│
-├── powerbi/
-│ └── ER_Wait_Time_Analysis.pbix
-│
-├── data/
-│ ├── er_wait_predictions_detailed.csv
-│ ├── er_wait_by_hospital.csv
-│ └── er_wait_by_hour.csv
-│
-├── visuals/
-│ ├── rf_feature_importances_impurity_top20.png
-│ └── rf_feature_importances_perm_top20.png
-│
-├── screenshots/
-│ ├── main_dashboard.png
-│ ├── hospital_drillthrough.png
-│ └── hour_drillthrough.png
-│
-└── README.md
+
+>powerbi/
+     ER_Wait_Time_Analysis.pbix
+
+>data/
+     er_wait_predictions_detailed.csv
+     er_wait_by_hospital.csv
+     er_wait_by_hour.csv
+     
+>visuals/
+     rf_feature_importances_impurity_top10.png
+     rf_feature_importances_perm_top10.png
+
+>screenshots/
+     Main_Dashboard.png
+     Hospital_Drillthrough.png
+     Hout_Drillthrough.png
+
+>README.md
+
+```
 
 
 
 
-
-
-
-
-
+---
